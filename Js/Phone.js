@@ -15,8 +15,8 @@ const displayLoadData = (phoneInfo) => {
         divCreate.classList.add('col')
         divCreate.innerHTML = `
         
-                      <div class="card h-50">
-                        <img src="${phone.image}" class="card-img-top " alt="...">
+                      <div class="card h-80">
+                        <img src="${phone.image}" class="card-img-top p-5" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${phone.phone_name}</h5>
                             <p class="card-text">${phone.slug}</p>
