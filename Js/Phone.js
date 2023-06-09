@@ -7,16 +7,18 @@ const loadData = (searchText) => {
 
 
 const displayLoadData = (phoneInfo) => {
-
     //spacifick data showing work.........
-
-    // phoneInfo = phoneInfo.slice(0, 10);
+    const phoneShow = document.getElementById('show-btn');
+    if (phoneInfo.length > 10) {
+        phoneInfo = phoneInfo.slice(0, 10);
+        phoneShow.classList.remove('d-none');
+    }
+    else {
+        phoneShow.classList.add('d-none');
+    }
     // console.log(phoneInfo);
-
     const phoneContainer = document.getElementById('phoneContainer')
-
     phoneContainer.innerHTML = ``;
-
     const noPhoneFound = document.getElementById('noFound');
 
     if (phoneInfo.length === 0) {
