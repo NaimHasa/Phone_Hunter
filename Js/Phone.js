@@ -43,12 +43,12 @@ const displayLoadData = (phoneInfo) => {
         `;
         phoneContainer.appendChild(divCreate);
 
-        // loader end point
-        toggleSpinner(false);
 
     });
 
 
+    // loader end point
+    toggleSpinner(false);
 
 }
 
