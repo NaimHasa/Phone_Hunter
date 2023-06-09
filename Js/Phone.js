@@ -8,7 +8,9 @@ const loadData = (searchText) => {
 
 const displayLoadData = (phoneInfo) => {
 
-    phoneInfo = phoneInfo.slice(0, 10);
+    //spacifick data showing work.........
+
+    // phoneInfo = phoneInfo.slice(0, 10);
     // console.log(phoneInfo);
 
     const phoneContainer = document.getElementById('phoneContainer')
@@ -41,6 +43,9 @@ const displayLoadData = (phoneInfo) => {
         `;
         phoneContainer.appendChild(divCreate);
 
+        // loader end point
+        toggleSpinner(false);
+
     });
 
 
@@ -48,11 +53,24 @@ const displayLoadData = (phoneInfo) => {
 }
 
 const searchBtn = () => {
+    toggleSpinner(true);
+    //loader start point
     const inputFiled = document.getElementById('inputTextFiled')
     const inputFiledText = inputFiled.value;
     loadData(inputFiledText);
 
     inputFiled.value = '';
+
+};
+const toggleSpinner = isLoding => {
+    const loaderSection = document.getElementById('loader');
+
+    if (isLoding) {
+        loaderSection.classList.remove('d-none');
+    }
+    else {
+        loaderSection.classList.add('d-none');
+    }
 
 }
 
