@@ -11,13 +11,20 @@
 
 <body>
     <header>
-        <h1 class="text-center ">The Phone Hunter</h1>
+        <h1 class="text-center text-primary ">The Phone Hunter</h1>
     </header>
 
     <section>
         <div class="text-center">
             <input id="inputTextFiled" placeholder="Search Your Phone" type="text">
             <button onclick="searchBtn()" id="search" place>Search</button>
+
+        </div>
+    </section>
+
+    <section>
+        <div id="noFound" class="mt-4 text-center text-danger d-none">
+            <h1>Phone NOT a Found. Please Search a New... </h1>
 
         </div>
     </section>

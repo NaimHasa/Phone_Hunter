@@ -7,10 +7,26 @@ const loadData = (searchText) => {
 
 
 const displayLoadData = (phoneInfo) => {
+
+    phoneInfo = phoneInfo.slice(0, 10);
     // console.log(phoneInfo);
+
     const phoneContainer = document.getElementById('phoneContainer')
 
+    phoneContainer.innerHTML = ``;
+
+    const noPhoneFound = document.getElementById('noFound');
+
+    if (phoneInfo.length === 0) {
+        noPhoneFound.classList.remove('d-none');
+
+    }
+    else {
+        noPhoneFound.classList.add('d-none');
+    }
+
     phoneInfo.forEach(phone => {
+
         const divCreate = document.createElement('div')
         divCreate.classList.add('col')
         divCreate.innerHTML = `
@@ -36,10 +52,12 @@ const searchBtn = () => {
     const inputFiledText = inputFiled.value;
     loadData(inputFiledText);
 
+    inputFiled.value = '';
+
 }
 
 
 
 
 
-loadData();
+// loadData();
